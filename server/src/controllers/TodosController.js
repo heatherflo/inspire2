@@ -19,4 +19,14 @@ export class TodosController extends BaseController {
       next(error)
     }
   }
+
+  async getTodos(request, response, next) {
+    try {
+      const todos = await todosService.getTodos()
+      response.send(todos)
+    } catch (error) {
+      next(error)
+    }
+
+  }
 }

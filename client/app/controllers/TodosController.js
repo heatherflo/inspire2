@@ -24,5 +24,13 @@ export class TodosController {
     }
   }
 
+  async getTodos() {
+    try {
+      await todosService.getTodos()
+    } catch (error) {
+      console.log(error)
+      Pop.toast(error.message)
+    }
+  }
 
 }
