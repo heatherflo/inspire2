@@ -9,7 +9,7 @@ export const router = new Router([
   {
     path: '',
     controllers: [TodosController],
-    view: `app/views/HomeView.html`
+    view: `app/views/TodosView.html`
 
   },
   {
