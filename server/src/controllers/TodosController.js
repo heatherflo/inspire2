@@ -12,9 +12,9 @@ export class TodosController extends BaseController {
 
   async createTodos(request, response, next) {
     try {
-      const formData = request.body
-      const todo = await todosService.createTodos(formData)
-      response.send(todo)
+      const formData = request.body //requests the body of formData from the client side
+      const todo = await todosService.createTodos(formData) //awaits the service to send the formData and calls it a todo
+      response.send(todo) //sends back the todo to the client
     } catch (error) {
       next(error)
     }
@@ -22,7 +22,7 @@ export class TodosController extends BaseController {
 
   async getTodos(request, response, next) {
     try {
-      const todos = await todosService.getTodos()
+      const todos = await todosService.getTodos() //awaits the service to get todos and sends them back to the client side 
       response.send(todos)
     } catch (error) {
       next(error)

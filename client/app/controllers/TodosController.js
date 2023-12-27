@@ -11,13 +11,14 @@ export class TodosController {
 
   async createTodo() {
     try {
-      event.preventDefault()
-      const form = event.target
-      const formData = getFormData(form)
-      console.log('todosData', formData)
-      await todosService.createTodos(formData)
+      event.preventDefault() // preventing the default refresh page load
+      const form = event.target //sets the event in question to the form
+      const formData = getFormData(form) //sets the ability to get form data from the form and calls it formData
+      console.log('todosData', formData) //checks to see what the formData is and puts it in te console.
+      await todosService.createTodos(formData) //awaits the service to do its job and sends the formData down to the service
+      Pop.success("data entered!")
       // @ts-ignore
-      form.reset()
+      form.reset() // makes it so the form doesn't reset after putting in information
     } catch (error) {
       console.log(error)
       Pop.toast(error.message)
@@ -26,7 +27,7 @@ export class TodosController {
 
   async getTodos() {
     try {
-      await todosService.getTodos()
+      await todosService.getTodos() //awaits the service to get info
     } catch (error) {
       console.log(error)
       Pop.toast(error.message)
