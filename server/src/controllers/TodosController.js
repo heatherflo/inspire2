@@ -5,9 +5,10 @@ import { logger } from "../utils/Logger.js";
 
 export class TodosController extends BaseController {
   constructor() {
-    super('api/birds')
+    super('api/todos')
     this.router
-    logger.log('are you logging?')
+      .get('', this.getTodos)
+      .post('', this.createTodos)
   }
 
   async createTodos(request, response, next) {

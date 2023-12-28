@@ -3,7 +3,7 @@ import { Todo } from "../models/Todos.js"
 import { api } from "./AxiosService.js"
 
 class TodosService {
-  async createTodos(formData) {
+  async createTodo(formData) {
     const response = await api.post('api/todos', formData) //posts/creates new formData to the db on the server side
     console.log('posting todos', response)
     const newTodo = new Todo(response.data) //makes a new Todo out of the response data from the service 

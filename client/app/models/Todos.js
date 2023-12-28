@@ -10,4 +10,10 @@ export class Todo {
 
   }
 
+
+  get todoList() {
+    return `<div class="col-4 text-light" id="todo-list">
+    <h2>${this.description}</h2>
+  </div>`
+  }
 }
